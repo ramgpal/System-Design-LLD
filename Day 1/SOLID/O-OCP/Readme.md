@@ -1,0 +1,1 @@
+# The Open/Closed Principle encourages software entities to be open for extension but closed for modification. This means we can able extend the behavior of a module without modifying its source code.
