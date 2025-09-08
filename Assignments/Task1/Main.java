@@ -13,7 +13,7 @@ public class Main {
         PM pm = new PM("Narendra Modi", "Pan India", driver1, aircraftDriver);
 
 
-        // Inject PM dependency into Commissioner (DI in action)
+        // Injecting PM dependency into Commissioner (DI in action)
         Commissioner commissioner = Commissioner.getInstance(pm);
 
         System.out.println(commissioner.canArrest(mp));  
