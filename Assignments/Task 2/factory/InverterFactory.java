@@ -8,7 +8,6 @@ import models.Regalia;
 import util.Battery;
 import util.SolarPanel;
 
-
 public class InverterFactory {
     public static Inverter createInverter(String type, double current, double voltage) {
         SolarPanel panel = new SolarPanel("SP-300W");

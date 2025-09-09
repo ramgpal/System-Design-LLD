@@ -2,7 +2,7 @@ package util;
 
 public class Battery {
     private String type;
-    private int capacity;  // Ah
+    private int capacity;  
 
     public Battery(String type, int capacity) {
         this.type = type;
