@@ -1,34 +1,20 @@
 public class Commissioner {
 
-    private static Commissioner instance;
-    private PM pm; 
-
-    private Commissioner(PM pm) {
-        this.pm = pm;
-    }
-
-    // Dependency Injection via getInstance()
-    public static Commissioner getInstance(PM pm) {
-        if (instance == null) {
-            instance = new Commissioner(pm);
-        }
-        return instance;
-    }
-
-    // logic to determine if an MP can be arrested
-    public boolean canArrest(MP mp) {
-        if (mp instanceof Minister) {
-            Minister minister = (Minister) mp;
-            if (minister.exceedsSpendingLimit() && pm.canArrestMinister(minister)) {
-                return true;
+    public void canArrest(Person person) {
+        if (person instanceof Minister) {
+            Minister minister = (Minister) person;
+            if (minister.hasPmPermission() && minister.exceedsSpendingLimit()) {
+                System.out.println("Arrested");
+            } else {
+                System.out.println("cannot be arrested without PM's permission.");
             }
-            return false;
+        } else if (person instanceof MP) {
+            MP mp = (MP) person;
+            if (mp.exceedsSpendingLimit()) {
+                System.out.println("Arrested by Commissioner.");
+            } else {
+                System.out.println("is within spending limit.");
+            }
         }
-
-        if (mp.exceedsSpendingLimit()) {
-            return true;
-        }
-
-        return false;
     }
 }

@@ -1,5 +1,5 @@
 public class Vehicle {
-    private String type;
+    private String type;  
     private Driver driver;
 
     public Vehicle(String type, Driver driver) {

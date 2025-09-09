@@ -1,40 +1,17 @@
-public class MP {
-    private String name;
+public class MP extends Person {
     private String constituency;
-    private Vehicle vehicle;
-    private double spending;
 
-    // constructor
     public MP(String name, String constituency, Driver driver) {
-        this.name = name;
+        super(name, new Vehicle("Car", driver));
         this.constituency = constituency;
-        this.vehicle = new Vehicle("Car", driver);
-        this.spending = 0;
-    }
-
-    // getters and setters
-    public String getName() {
-        return name;
     }
 
     public String getConstituency() {
         return constituency;
     }
 
-    public Vehicle getVehicle() {
-        return vehicle;
-    }
-
-    public void addSpending(double amount) {
-        this.spending += amount;
-    }
-
-    public double getSpending() {
-        return spending;
-    }
-
-    // method to check if spending cross allowed limit or not
+    @Override
     public boolean exceedsSpendingLimit() {
-        return spending > 100000;
+        return getSpending() > 100000;
     }
 }

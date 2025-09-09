@@ -1,5 +1,7 @@
-# Write a program to depict Indian Politics.
+## Write a program to depict Indian Politics.
+
 Consider the politics use cases :
+
 MP: is a person who won from a constituency 
 getConstituency - return their winning constituency.
 getDriver - returns the driver assigned for their vehicle (default car).

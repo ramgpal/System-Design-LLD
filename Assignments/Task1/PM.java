@@ -15,7 +15,6 @@ public class PM extends MP {
         return getSpending() > 10000000;
     }
 
-    // this is assumption
     public boolean canArrestMinister(Minister minister) {
         return true;
     }

@@ -5,19 +5,24 @@ public class Main {
         Driver aircraftDriver = new Driver("AircraftDriver");
 
         MP mp = new MP("Ram", "Delhi", driver1);
-        mp.addSpending(150000);
+        mp.addSpending(120000);  // exceeds limit
 
         Minister minister = new Minister("Shyam", "Mumbai", driver2);
-        minister.addSpending(2000000);
+        minister.addSpending(1500000); 
+        minister.grantPmPermission();
 
         PM pm = new PM("Narendra Modi", "Pan India", driver1, aircraftDriver);
+        pm.addSpending(8000000);
 
+        Commissioner commissioner = new Commissioner();
 
-        // Injecting PM dependency into Commissioner (DI in action)
-        Commissioner commissioner = Commissioner.getInstance(pm);
+        System.out.println("\nChecking MP:");
+        commissioner.canArrest(mp);
 
-        System.out.println(commissioner.canArrest(mp));  
-        System.out.println(commissioner.canArrest(minister));  
-        System.out.println(commissioner.canArrest(pm)); 
+        System.out.println("\nChecking Minister:");
+        commissioner.canArrest(minister);
+
+        System.out.println("\nChecking PM:");
+        commissioner.canArrest(pm);
     }
 }
