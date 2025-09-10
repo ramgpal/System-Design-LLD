@@ -12,18 +12,16 @@ public class InverterFactory {
     public static Inverter createInverter(String type, double current, double voltage) {
         SolarPanel panel = new SolarPanel("SP-300W");
 
-        switch (type) {
-            case "PCU":
-                return new PCU(current, voltage, panel);
-            case "GTI":
-                return new GTI(current, voltage, panel);
-            case "Regalia":
-                return new Regalia(current, voltage, panel);
-            case "Zelio":
-            case "iCruze":
-                return new HomeInverter(current, voltage, new Battery("Lithium-Ion", 180));
-            default:
-                throw new IllegalArgumentException("Unknown inverter type");
+        if(type.equals("PCU")) {
+            return new PCU(current, voltage, panel);
+        } else if(type.equals("GTI")) {
+            return new GTI(current, voltage, panel);
+        } else if(type.equals("Regalia")) {
+            return new Regalia(current, voltage, panel);
+        } else if(type.equals("Zelio") || type.equals("iCruze")) {
+            return new HomeInverter(current, voltage, new Battery("Lithium-Ion", 180));
         }
+
+        return  null;
     }
 }

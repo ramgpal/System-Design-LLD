@@ -11,6 +11,7 @@ public class InverterManager {
         if (instance == null) {
             instance = new InverterManager();
         }
+        
         return instance;
     }
 

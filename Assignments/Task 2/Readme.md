@@ -11,4 +11,4 @@ company have PCU, GTI, Zelio, Regalia, iCruze Inverters,
 - Solar Inverters further have two option one Battery version that whatever energy is produced will be stored in battery other will not stor any energy,
 - so PCU comes with battery but GTI have no battery,
 - Solar Inverter also have GRID On , system where you can sell your extra energy back, GTI is GRID On where as this feature is not available in PCU,
-- Non Solar Inverters are Simple Home Inverters Which have a Battery," 
+- Non Solar Inverters are Simple Home Inverters Which have a Battery,
