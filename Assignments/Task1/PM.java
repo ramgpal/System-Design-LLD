@@ -15,7 +15,7 @@ public class PM extends MP {
         return getSpending() > 10000000;
     }
 
-    public boolean canArrestMinister(Minister minister) {
+    public static boolean allowArrest(Minister minister) {
         return true;
     }
 }
