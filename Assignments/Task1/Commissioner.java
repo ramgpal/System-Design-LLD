@@ -1,7 +1,9 @@
 public class Commissioner {
 
     public void canArrest(Person person) {
-        if (person instanceof Minister) {
+        if(person instanceof PM) {
+            System.out.println("PM cannot be arrested.");
+        } else if (person instanceof Minister) {
             Minister minister = (Minister) person;
             if (PM.allowArrest(minister) && minister.exceedsSpendingLimit()) {
                 System.out.println("Arrested");

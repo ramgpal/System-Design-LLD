@@ -9,7 +9,6 @@ public class Main {
 
         Minister minister = new Minister("Shyam", "Mumbai", driver2);
         minister.addSpending(1500000); 
-        minister.grantPmPermission();
 
         PM pm = new PM("Narendra Modi", "Pan India", driver1, aircraftDriver);
         pm.addSpending(8000000);
