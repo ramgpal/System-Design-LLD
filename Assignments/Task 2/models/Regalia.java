@@ -5,6 +5,7 @@ import util.SolarPanel;
 
 public class Regalia extends SolarInverter {
 
+    // constructor
     public Regalia(double current, double operatingVoltage, SolarPanel solarPanel) {
         super(current, operatingVoltage, solarPanel, false, new Battery("Lead-Acid", 150));
     }

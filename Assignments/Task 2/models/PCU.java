@@ -12,7 +12,7 @@ public class PCU extends SolarInverter {
     @Override
     public void displayDetails() {
         System.out.println("PCU Inverter");
-        System.out.println("Power Rating: " + getPowerRating() + "W");
+        System.out.println("Power Rating: " + getPowerRating() + "Watt");
         System.out.println("Solar Panel Model: " + solarPanel.getModel());
         System.out.println("Battery: " + battery.getDetails());
         System.out.println("Grid On: " + gridOn);

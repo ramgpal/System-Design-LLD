@@ -5,6 +5,7 @@ import util.Battery;
 public class HomeInverter extends Inverter {
     private Battery battery;
 
+    // constructor
     public HomeInverter(double current, double operatingVoltage, Battery battery) {
         super(current, operatingVoltage);
         this.battery = battery;
