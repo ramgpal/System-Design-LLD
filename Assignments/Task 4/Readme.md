@@ -2,7 +2,9 @@
 
 - Anyone can read content of brick.
 - Anyone can comment on it.
-- Use cases:
+
+# Use cases:
+
 - Brick: Every country has n number of cities and every city can have 1 to n number of walls.
 - wall can have max of 90 bricks. 2nd wall would be only initiated once all bricks of 1st wall will be occupied.
 - A brick can be only owned by a single guy..
