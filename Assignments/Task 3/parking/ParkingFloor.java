@@ -14,15 +14,14 @@ public class ParkingFloor {
         this.floorNo = floorNo;
     }
 
-    // Methods to add parking spots
-    public void addSpot(ParkingSpot spot) {
-        spots.add(spot);
-        updateDisplay();
+    // getter for floor number
+    public int getFloorNo() { 
+        return floorNo; 
     }
 
-    public void removeSpot(String spotId) {
-        spots.removeIf(s -> s.getId().equals(spotId));
-        updateDisplay();
+    // getter for parking spots
+    public List<ParkingSpot> getSpots() {
+        return spots;
     }
 
     public void updateDisplay() {

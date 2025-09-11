@@ -13,15 +13,23 @@ public class ParkingLot {
         this.capacity = capacity;
     }
 
-    public void addFloor(ParkingFloor floor) { 
-        floors.add(floor); 
-    }
-
-    public void removeFloor(ParkingFloor floor) { 
-        floors.remove(floor); 
-    }
-
+    // getters and setters
     public int getCapacity() { 
         return capacity; 
+    }
+
+    // getter for list of floors
+    public List<ParkingFloor> getFloors() { 
+        return floors; 
+    }
+
+    // getters for entrances and exits
+    public List<EntrancePanel> getEntrances() { 
+        return entrances; 
+    }
+
+    // getter for exits
+    public List<ExitPanel> getExits() { 
+        return exits; 
     }
 }
