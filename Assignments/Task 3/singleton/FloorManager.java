@@ -24,7 +24,7 @@ public class FloorManager {
             lot.getFloors().add(floor);
             System.out.println("Floor added successfully." + floor.getFloorNo());
         } else {
-            System.out.println("Only Admin users can add floors.");
+            System.out.println("Access Denied.");
         }
     }
 
@@ -34,7 +34,7 @@ public class FloorManager {
             lot.getFloors().remove(floor);
             System.out.println("Floor removed successfully." + floor.getFloorNo());
         } else {
-            System.out.println("Only Admin users can remove floors.");
+            System.out.println("Access Denied.");
         }
     }
 
@@ -52,7 +52,7 @@ public class FloorManager {
 
             System.out.println("Floor updated successfully.");
         } else {
-            System.out.println("Only Admin users can update floors.");
+            System.out.println("Access Denied.");
         }
     }
 
@@ -73,7 +73,7 @@ public class FloorManager {
             
             System.out.println("Fetched floor details successfully.");
         } else {
-            System.out.println("Only Admin users can view floor details.");
+            System.out.println("Access Denied.");
         }
     }
 }
