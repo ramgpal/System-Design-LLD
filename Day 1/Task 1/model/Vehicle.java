@@ -1,3 +1,5 @@
+package model;
+
 public class Vehicle {
     private String type;  
     private Driver driver;

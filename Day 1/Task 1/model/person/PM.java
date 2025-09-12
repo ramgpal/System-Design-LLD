@@ -1,3 +1,5 @@
+package model;
+
 public class PM extends MP {
     private Vehicle aircraft;
 

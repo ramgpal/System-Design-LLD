@@ -1,3 +1,5 @@
+package model;
+
 public class MP extends Person {
     private String constituency;
 

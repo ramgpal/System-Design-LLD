@@ -1,3 +1,5 @@
+package model;
+
 public class Commissioner {
 
     public void canArrest(Person person) {
