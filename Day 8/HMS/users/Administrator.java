@@ -1,5 +1,6 @@
 package users;
 
+// class Administrator
 public class Administrator extends User {
 
     // constructor

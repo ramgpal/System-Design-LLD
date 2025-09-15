@@ -1,5 +1,6 @@
 package users;
 
+// class Hotel Agent
 public class HotelAgent extends User {
 
     // constructor

@@ -2,7 +2,10 @@ package model;
 
 import users.*;
 
+// class responsible for ratings
 public class Rating {
+
+    // class fields
     private User user;
     private int startCount;
 

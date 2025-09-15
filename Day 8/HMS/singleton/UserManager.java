@@ -2,12 +2,11 @@ package singleton;
 
 import enums.BookStatus;
 import java.util.*;
-import model.Hotel;
-import model.Rating;
-import model.Room;
+import model.*;
 import repository.UserCatalog;
 import users.*;
 
+// user manager class
 public class UserManager {
 
     // class fields
@@ -82,14 +81,18 @@ public class UserManager {
         if(user instanceof User) {
             List<Room> rooms = hotel.getRooms();
 
+            // finding room and checking
             for(Room curr : rooms) {
                 if(curr.getRoomNumber() == room.getRoomNumber()) {
-                    if(curr.getBookStatus().equals("RESERVED")) {
+                    if(curr.getBookStatus().equals(BookStatus.RESERVED)) {
                         System.out.println("Room is already reserved for someone else.");
-                        return;
+                    } else if(curr.getBookStatus().equals(BookStatus.BOOKED)){
+                        System.out.println("Room is already occupied.");
                     } else {
-                        System.out.println("Not reserved.");
+                        System.out.println("Room is available.");
                     }
+
+                    return;
                 }
             }
 
@@ -98,7 +101,7 @@ public class UserManager {
         }
     }
 
-        // Method to rate the hotel
+    // Method to rate the hotel -> I have rated based on count of start
     public void giveFeedback(Hotel hotel, Rating rating) {
         if(rating.getUser() instanceof User) {
             hotel.getRatings().add(rating); // adding rating

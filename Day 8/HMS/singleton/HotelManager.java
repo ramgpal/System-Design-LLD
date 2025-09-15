@@ -1,11 +1,11 @@
 package singleton;
 
+import java.util.*;
+import model.*;
 import repository.*;
 import users.*;
-import model.*;
-import java.util.*;
 
-// This class is responsible for all kind of hotel related functions
+// This class is responsible for all kind of hotel booking related functions
 public class HotelManager {
     private HotelCatalog hotelCatalog;
     private static HotelManager instance; // single instance
