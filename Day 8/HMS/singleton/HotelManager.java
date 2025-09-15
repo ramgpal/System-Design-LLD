@@ -83,7 +83,7 @@ public class HotelManager {
     }
 
     // Method to update Hotel details -> in this i am updating hotel name
-    public void updateDetails(Hotel hotel, User user, String name, User action) {
+    public void updateHotel(Hotel hotel, User user, String name, User action) {
         if(user instanceof HotelAgent) {
            List<Hotel> hotels = hotelCatalog.getHotel();
 
