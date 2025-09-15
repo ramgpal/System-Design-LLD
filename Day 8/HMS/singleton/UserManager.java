@@ -1,8 +1,5 @@
 package singleton;
 
-import enums.BookStatus;
-import java.util.*;
-import model.*;
 import repository.UserCatalog;
 import users.*;
 
@@ -18,7 +15,7 @@ public class UserManager {
         this.userCatalog = new UserCatalog();
     }
 
-    // Method to create single instance
+    // 1. Method to get only single instance
     public static UserManager getInstance() {
         if(instance == null) {
             instance = new UserManager();
@@ -27,7 +24,7 @@ public class UserManager {
         return instance;
     }
 
-    // Method to register user
+    // 2. Method to register user
     public void registerUser(User user) {
         if(userCatalog.getUsers().containsKey(user)) {
             System.out.println("User already exist");
@@ -36,7 +33,7 @@ public class UserManager {
         }
     }
 
-    // deleting user from hotel
+    // 3. deleting user from hotel
     public void deleteUser(User toDelete, User user) {
         if(user instanceof Administrator) {
             if(userCatalog.getUsers().containsKey(toDelete)) {
@@ -50,68 +47,7 @@ public class UserManager {
         }
     }
 
-    // Method to book rooms
-    public void bookRoom(Hotel hotel, Room room, User user) {
-        // only normal user can book the room
-        if(user instanceof User) {
-            List<Room> rooms = hotel.getRooms();
-
-            for(Room curr : rooms) {
-                if(curr.getRoomNumber() == room.getRoomNumber()) {
-                    // checking availability of room
-                    if(curr.getBookStatus().equals(BookStatus.AVAILABLE)) {
-                        curr.setBookStatus(BookStatus.BOOKED); // room is booked
-                        userCatalog.getUsers().put(user, room);
-
-                        System.out.println("Room number " +room.getRoomNumber() +" is booked in "+ hotel.getHotelName());
-                        return;
-                    } else {
-                        System.out.println("Selected room is not available");
-                        return;
-                    }
-                }
-            }
-        } else {
-            System.out.println("User is not authorised to book the room");
-        }
-    }
-
-    // Method to check either a room reserved or not
-    public void viewReservationStatus(Hotel hotel, Room room, User user) {
-        if(user instanceof User) {
-            List<Room> rooms = hotel.getRooms();
-
-            // finding room and checking
-            for(Room curr : rooms) {
-                if(curr.getRoomNumber() == room.getRoomNumber()) {
-                    if(curr.getBookStatus().equals(BookStatus.RESERVED)) {
-                        System.out.println("Room is already reserved for someone else.");
-                    } else if(curr.getBookStatus().equals(BookStatus.BOOKED)){
-                        System.out.println("Room is already occupied.");
-                    } else {
-                        System.out.println("Room is available.");
-                    }
-
-                    return;
-                }
-            }
-
-        } else {
-            System.out.println("user is not authorised to see reservation status of a room");
-        }
-    }
-
-    // Method to rate the hotel -> I have rated based on count of start
-    public void giveFeedback(Hotel hotel, Rating rating) {
-        if(rating.getUser() instanceof User) {
-            hotel.getRatings().add(rating); // adding rating
-            System.out.println(rating.getUser().getUsername() + " has rated "+ hotel.getHotelName() + " "+rating.getStarCount() + "*");
-        } else {
-            System.out.println("User isn't authorise to rate the hotel");
-        }
-    }
-
-    // Method to update profie -> i am updating email here
+    // 6. Method to update user profie -> i am updating email here
     public void updateProfile(User user, String email) {
         if(user instanceof User || user instanceof HotelAgent) {
             user.setEmail(email);

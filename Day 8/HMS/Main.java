@@ -29,14 +29,17 @@ public class Main {
         Room roomToAdd = new Room(102, BookStatus.AVAILABLE);
         rooms.add(roomToAdd);
 
-        // Creating single instance of user Manager that perform actions of users
-        UserManager userManager = UserManager.getInstance();
+        // Creating single instance of room Manager that perform actions of users
+        RoomManager roomManager = RoomManager.getInstance();
         
         // Booking a room 102
-        userManager.bookRoom(hotel, roomToAdd, new User("Ram", "email.com"));
+        roomManager.bookRoom(hotel, roomToAdd, new User("Ram", "email.com"));
         System.out.println();
 
+        // Creating single instance of room Manager that perform actions of users
+        FeedbackManager feedbackManager = FeedbackManager.getInstance();
+
         // giving feedback to a hotel
-        userManager.giveFeedback(hotel, new Rating(new User("cva", "xyz"), 4));
+        feedbackManager.giveFeedback(hotel, new Rating(new User("cva", "xyz"), 4));
     }
 }

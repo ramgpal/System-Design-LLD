@@ -5,7 +5,7 @@ import model.*;
 import repository.*;
 import users.*;
 
-// This class is responsible for all kind of hotel booking related functions
+// This class is responsible for all kind of hotel CRUD functions
 public class HotelManager {
     private HotelCatalog hotelCatalog;
     private static HotelManager instance; // single instance
@@ -15,7 +15,7 @@ public class HotelManager {
         this.hotelCatalog = new HotelCatalog();
     }
 
-    // function that will create single instance of hotel manager
+    // 1. function that will create or get single instance of hotel manager
     public static HotelManager getInstance() {
         // if not created
         if(instance == null) {
@@ -25,7 +25,7 @@ public class HotelManager {
         return instance;
     }
 
-    // Method to add hotel in the site
+    // 2. Method to add hotel in the site
     public void addHotel(Hotel hotel, User user, User action) {
         if(user instanceof HotelAgent) {
             if(approveRequest(hotel, "ADD", action)) {  // if got approval from administrator
@@ -38,7 +38,7 @@ public class HotelManager {
     }
 
 
-    // Method to delete hotel from site
+    // 3. Method to delete hotel from site
     public void deleteHotel(Hotel hotel, User user) {
         if(user instanceof Administrator) {
             if(hotelCatalog.getHotel().contains(hotel)) {
@@ -50,7 +50,7 @@ public class HotelManager {
         }
     }
 
-    // Method to approve request to add hotel in site
+    // 4. Method to approve request to add hotel in site
     public boolean approveRequest(Hotel hotel, String requestType, User user) {
         if(requestType.equals("ADD") && user instanceof Administrator) {
             System.out.println("Hotel adding request approved by administrator");
@@ -63,7 +63,7 @@ public class HotelManager {
         return false;
     }
 
-    // Method to search for hotels in the site by name
+    // 5. Method to search for hotels in the site by name
     public void getHotelByName(Hotel hotel, User user) {
         if(user instanceof User) {
             if(hotelCatalog.getHotel().contains(hotel)) {
@@ -82,7 +82,7 @@ public class HotelManager {
         }
     }
 
-    // Method to update Hotel details -> in this i am updating hotel name
+    // 6. Method to update Hotel details -> in this i am updating hotel name
     public void updateHotel(Hotel hotel, User user, String name, User action) {
         if(user instanceof HotelAgent) {
            List<Hotel> hotels = hotelCatalog.getHotel();
@@ -103,4 +103,5 @@ public class HotelManager {
             System.out.println("User is not authorised to update information.");
         }
     }
+
 }
