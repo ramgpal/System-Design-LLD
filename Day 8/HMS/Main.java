@@ -34,5 +34,9 @@ public class Main {
         
         // Booking a room 102
         userManager.bookRoom(hotel, roomToAdd, new User("Ram", "email.com"));
+        System.out.println();
+
+        // giving feedback to a hotel
+        userManager.giveFeedback(hotel, new Rating(new User("cva", "xyz"), 4));
     }
 }

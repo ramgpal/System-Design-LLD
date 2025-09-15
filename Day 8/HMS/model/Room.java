@@ -1,8 +1,6 @@
 package model;
 
 import enums.*;
-import model.*;
-import users.*;
 
 // Room class -> contains details of room
 public class Room {

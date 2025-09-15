@@ -3,6 +3,7 @@ package singleton;
 import enums.BookStatus;
 import java.util.*;
 import model.Hotel;
+import model.Rating;
 import model.Room;
 import repository.UserCatalog;
 import users.*;
@@ -95,7 +96,17 @@ public class UserManager {
         } else {
             System.out.println("user is not authorised to see reservation status of a room");
         }
-
     }
+
+        // Method to rate the hotel
+    public void giveFeedback(Hotel hotel, Rating rating) {
+        if(rating.getUser() instanceof User) {
+            hotel.getRatings().add(rating); // adding rating
+            System.out.println(rating.getUser().getUsername() + " has rated "+ hotel.getHotelName() + " "+rating.getStarCount() + "*");
+        } else {
+            System.out.println("User isn't authorise to rate the hotel");
+        }
+    }
+
 }
 

@@ -8,12 +8,14 @@ public class Hotel {
     private String hotelName;
     private String address;
     private List<Room> rooms;
+    private List<Rating> ratings;
 
     // constructor
     public Hotel(String hotelName, String address) {
         this.hotelName = hotelName;
         this.address = address;
         this.rooms = new ArrayList<>();
+        this.ratings = new ArrayList<>();
     }
 
     // getter for hotelName
@@ -34,5 +36,10 @@ public class Hotel {
     // getter for rooms
     public List<Room> getRooms() {
         return this.rooms;
+    }
+
+    // getter for ratings
+    public List<Rating> getRatings() {
+        return this.ratings;
     }
 }
