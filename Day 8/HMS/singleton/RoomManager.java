@@ -6,7 +6,7 @@ import model.*;
 import repository.*;
 import users.*;
 
-// Class responsible for managing operations related to room
+// Class responsible for managing CRUD operations related to room
 public class RoomManager {
 
     // class fields

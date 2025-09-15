@@ -3,6 +3,7 @@ package singleton;
 import model.*;
 import users.*;
 
+// Class responsible for managing CRUD operations related to feedbacks
 public class FeedbackManager{
     private static FeedbackManager instance; // single instance
 
