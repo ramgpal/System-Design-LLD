@@ -52,7 +52,7 @@ public class HotelManager {
     // Method to approve request to add hotel in site
     public boolean approveRequest(Hotel hotel, String requestType, User user) {
         if(requestType.equals("ADD") && user instanceof Administrator) {
-            System.out.println("Request approved");
+            System.out.println("Hotel adding request approved by administrator");
             return true;
         } else if(requestType.equals("UPDATE") && user instanceof Administrator){
             System.out.println("Approved update request");
