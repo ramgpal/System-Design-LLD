@@ -17,6 +17,7 @@ public class HotelManager {
 
     // function that will create single instance of hotel manager
     public static HotelManager getInstance() {
+        // if not created
         if(instance == null) {
             instance = new HotelManager();
         }
