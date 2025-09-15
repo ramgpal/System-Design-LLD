@@ -111,5 +111,14 @@ public class UserManager {
         }
     }
 
+    // Method to update profie -> i am updating email here
+    public void updateProfile(User user, String email) {
+        if(user instanceof User || user instanceof HotelAgent) {
+            user.setEmail(email);
+            System.out.println("Email updated successfully: " + email);
+        } else {
+            System.out.println("User isn't recognised");
+        }
+    }
 }
 

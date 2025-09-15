@@ -21,5 +21,10 @@ public class User {
     public String getEmail() { 
         return email; 
     }
+
+    // setter for email
+    public void setEmail(String email) {
+        this.email = email;
+    }
 }
 
