@@ -11,6 +11,7 @@ public class SearchManager {
 
     }
 
+     // Method that will create single instance
     public static SearchManager getInstance() {
         if(instance == null) {
             instance = new SearchManager();
@@ -18,6 +19,7 @@ public class SearchManager {
 
         return instance;
     }
+    
     // search the book by title
     public List<BookItem> getBookByTitle(Library lib, String title) {
         List<BookItem> ans = new ArrayList<>();

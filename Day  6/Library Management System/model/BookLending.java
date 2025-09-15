@@ -10,6 +10,7 @@ public class BookLending {
     protected Date startDate;
     public BookStatus bookStatus;
 
+    // constructor
     public BookLending(BookItem book, SystemUser user, Date startDate) {
         this.book = book;
         this.user = user;

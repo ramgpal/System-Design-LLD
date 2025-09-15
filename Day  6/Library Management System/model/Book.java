@@ -3,6 +3,7 @@ package model;
 import java.util.*;
 import user.*;
 
+// Book class
 public class Book {
     private String uniqueIdNumber;
     private String title;

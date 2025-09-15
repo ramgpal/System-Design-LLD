@@ -15,6 +15,7 @@ public class BookManager {
 
     }
 
+    // Method that will create single instance
     public static BookManager getInstance() {
         if(instance == null) {
             instance = new BookManager();
@@ -74,8 +75,5 @@ public class BookManager {
 
         return fineValue > 0 ? "Book is returned successfully returned, with a fine of Rs "+ fineValue + "." : "Book is returned on time, with no fine.";
     }
-
-
-    // Method to add a new book in library
     
 }

@@ -1,9 +1,8 @@
 package singleton;
 
 import java.util.Date;
-import java.util.concurrent.TimeUnit;
 import java.util.List;
-
+import java.util.concurrent.TimeUnit;
 import model.*;
 import user.*;
 
@@ -11,9 +10,9 @@ public class NotificationManager {
     private static NotificationManager instance;
 
     private NotificationManager() {
-        // private constructor
     }
 
+     // Method that will create single instance
     public static NotificationManager getInstance() {
         if (instance == null) {
             instance = new NotificationManager();

@@ -1,10 +1,13 @@
 package model;
 
 public class Account {
+
+    // class fields
     private String userName;
     private String password;
     private int accountId;
 
+    // constructor
     public Account(String userName, String password, int accountId) {
         this.userName = userName;
         this.password = password;
