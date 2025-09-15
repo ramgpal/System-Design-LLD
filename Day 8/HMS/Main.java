@@ -29,7 +29,7 @@ public class Main {
         Room roomToAdd = new Room(102, BookStatus.AVAILABLE);
         rooms.add(roomToAdd);
 
-        // Craeting single instance of user Manager that perform actions of users
+        // Creating single instance of user Manager that perform actions of users
         UserManager userManager = UserManager.getInstance();
         
         // Booking a room 102
